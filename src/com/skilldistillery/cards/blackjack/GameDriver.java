@@ -35,7 +35,7 @@ public class GameDriver {
 
 					System.out.println();
 					System.out.println("Would you like to hit or stay?");
-					entry = kb.next();
+					entry = kb.next().trim();
 					if (!entry.equalsIgnoreCase("hit") && !entry.equalsIgnoreCase("stay")) {
 						System.out.println("Please choose either hit or stay.");
 					} else if (entry.equalsIgnoreCase("hit")) {
@@ -103,6 +103,7 @@ public class GameDriver {
 			System.out.println("Would you like to play again? Y/N");
 			again = kb.next();
 		} while (again.equalsIgnoreCase("y"));
+		kb.close();
 	}
 	
 	public static int checkAceValue(Player player) {
